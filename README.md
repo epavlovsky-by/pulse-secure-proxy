@@ -28,21 +28,16 @@ docker run -it --rm --privileged \
 
 Environment variables
 ---
-* **VPN_URL** - mandatory. Will be prompted on startup if not specified.
-
-* **VPN_USER** - optional. Will be prompted during authentication if required.
-
-* **VPN_PASSWORD** - optional. usage not recommended since sensitive value can stay in command history, .env file, etc. Will be prompted during authentication if required.
-
-* **VPN_SUBNET** - optional. Default value is 10.0.0.0/8.
-
-* **VPN_PROTOCOL** - optional. Default value is "nc". See OpenConnect documentation for available values and description.
-
-* **VPN_SESSION_SECONDS** - optional, default value if 86400 (24 hours).
-
-* **AUTH_TYPE** - optional. Could be either SAML, or COOKIE. Default value is SAML.
-
-* **DSID_COOKIE** - optional. DSID cookie value that is used for authentication. If not specified then will be prompted or obtained according to AUTH_TYPE.
+|Variable name   |Optional?|Description|
+|----------------|---------|-----------|
+|**VPN_URL**     | false   | Will be prompted on startup if not specified. |
+|**VPN_USER**    | true    | Will be prompted during authentication if required. |
+|**VPN_PASSWORD**| true    | Usage not recommended since sensitive value can stay in command history, .env file, etc. Will be prompted during authentication if required.|
+|**VPN_SUBNET**  |true     |Default value is 10.0.0.0/8.|
+|**VPN_PROTOCOL**|true     |Default value is "nc". See OpenConnect documentation for available values and description.|
+|**VPN_SESSION** |true     |Default value if 86400 (24 hours).|
+|**AUTH_TYPE**   |true     |Could be either SAML, or COOKIE. Default value is SAML.|
+|**DSID_COOKIE** |true     |DSID cookie value that is used for authentication. If not specified then will be prompted or obtained according to AUTH_TYPE.|
 
 
 Supported architectures

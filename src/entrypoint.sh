@@ -32,7 +32,7 @@ connect() {
   openconnect -C "DSID=$DSID_COOKIE" \
               --script=$PULSE_DIR/post-connect.sh \
               --protocol=$VPN_PROTOCOL \
-              --reconnect-timeout $VPN_SESSION_SECONDS \
+              --reconnect-timeout $VPN_SESSION \
               $VPN_URL
 
   DSID_COOKIE=

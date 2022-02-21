@@ -12,9 +12,9 @@ if [ -z "$VPN_PROTOCOL" ]; then
     export VPN_PROTOCOL=nc
 fi
 
-if [ -z "$VPN_SESSION_SECONDS" ]; then
+if [ -z "$VPN_SESSION" ]; then
     # Default session timeout is 24 hours
-    export VPN_SESSION_SECONDS=86400
+    export VPN_SESSION=86400
 fi
 
 if [ -z "$AUTH_TYPE" ]; then
