@@ -10,7 +10,10 @@ dsid_auth() {
 }
 
 saml_auth() {
-  echo '...'
+  export COOKIE_FILE=$PULSE_DIR/dsid.txt
+  node -r $PULSE_DIR/node_modules/ts-node/register $PULSE_DIR/microsoft_login.ts
+  DSID_COOKIE=$(cat $COOKIE_FILE)
+  rm COOKIE_FILE
 }
 
 authenticate() {
