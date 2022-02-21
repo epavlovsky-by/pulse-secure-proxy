@@ -8,16 +8,12 @@ RUN apk add --no-cache tinyproxy procps
 
 COPY tinyproxy.conf /etc/tinyproxy/tinyproxy.conf
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+ENV PULSE_DIR=/etc/pulse-secure-proxy
+RUN mkdir $PULSE_DIR
 
-COPY custom-routing.sh /etc/vpnc/custom-routing.sh
-RUN chmod 755 /etc/vpnc/custom-routing.sh
-
-# vpnc-script version 2022
-COPY vpnc-script /etc/vpnc/vpnc-script
-RUN chmod 755 /etc/vpnc/vpnc-script
+COPY network/* env-init.sh entrypoint.sh $PULSE_DIR/
+RUN chmod -R +x $PULSE_DIR/
 
 EXPOSE 8888
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT $PULSE_DIR/entrypoint.sh
