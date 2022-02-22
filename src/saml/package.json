@@ -1,7 +1,7 @@
 {
-  "name": "epo_vpn",
+  "name": "saml-auth-app",
   "version": "1.0.0",
-  "description": "docker vpn implementation",
+  "description": "SAML authentication application",
   "main": "index.js",
   "scripts": {
     "login": "ts-node/register login.ts"
